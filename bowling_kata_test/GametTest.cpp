@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "../bowling_kata/Game.h"
 #include "../bowling_kata/RollsList.h"
+#include "../bowling_kata/FramesCount.h"
 #include <iostream>
 #include <iterator>
 #include <array>
@@ -61,6 +62,9 @@ INSTANTIATE_TEST_CASE_P(AllCombinationsTests,
 	GameTest,
 	::testing::Combine(
 		::testing::ValuesIn(testData),
-		::testing::Values([] {return make_shared<RollsList>(); })
+		::testing::Values(
+			[] {return make_shared<RollsList>(); },
+			[] {return make_shared<FramesCount>(); }
+		)
 	)
 );
