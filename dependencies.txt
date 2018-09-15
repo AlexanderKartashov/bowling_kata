@@ -1,0 +1,2 @@
+create "shared" directory near the solution directory
+add in shared directory boost and google test libraries
